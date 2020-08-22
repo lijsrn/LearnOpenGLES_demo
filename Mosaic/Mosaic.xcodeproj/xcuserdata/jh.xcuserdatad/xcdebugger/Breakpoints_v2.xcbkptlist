@@ -14,8 +14,8 @@
             filePath = "Mosaic/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "439"
-            endingLineNumber = "439"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
             landmarkName = "-compileShaderWithName:type:"
             landmarkType = "7">
          </BreakpointContent>

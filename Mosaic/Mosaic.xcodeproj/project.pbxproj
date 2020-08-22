@@ -17,6 +17,7 @@
 		E9BD1CA624EC16C300F0D91F /* HexagonMosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E9BD1CA524EC16C300F0D91F /* HexagonMosaic.vsh */; };
 		E9BD1CA924EC17A600F0D91F /* TriangularMosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E9BD1CA824EC17A600F0D91F /* TriangularMosaic.fsh */; };
 		E9BD1CAB24EC17C800F0D91F /* TriangularMosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E9BD1CAA24EC17C800F0D91F /* TriangularMosaic.vsh */; };
+		E9BD1D8E24F0B1D800F0D91F /* lufei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9BD1D8D24F0B1D800F0D91F /* lufei.jpg */; };
 		E9F0E61D24EB778D00FB2B65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0E61C24EB778D00FB2B65 /* AppDelegate.m */; };
 		E9F0E62024EB778D00FB2B65 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0E61F24EB778D00FB2B65 /* SceneDelegate.m */; };
 		E9F0E62324EB778D00FB2B65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0E62224EB778D00FB2B65 /* ViewController.m */; };
@@ -28,7 +29,6 @@
 		E9F0E63A24EB780900FB2B65 /* FilterBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0E63924EB780900FB2B65 /* FilterBarCell.m */; };
 		E9F0E66E24EC052B00FB2B65 /* Normal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E9F0E66D24EC052B00FB2B65 /* Normal.fsh */; };
 		E9F0E67024EC054000FB2B65 /* Normal.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E9F0E66F24EC054000FB2B65 /* Normal.vsh */; };
-		E9F0E67224EC059F00FB2B65 /* ym3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9F0E67124EC059F00FB2B65 /* ym3.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +42,7 @@
 		E9BD1CA524EC16C300F0D91F /* HexagonMosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = HexagonMosaic.vsh; sourceTree = "<group>"; };
 		E9BD1CA824EC17A600F0D91F /* TriangularMosaic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TriangularMosaic.fsh; sourceTree = "<group>"; };
 		E9BD1CAA24EC17C800F0D91F /* TriangularMosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TriangularMosaic.vsh; sourceTree = "<group>"; };
+		E9BD1D8D24F0B1D800F0D91F /* lufei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lufei.jpg; sourceTree = "<group>"; };
 		E9F0E61824EB778D00FB2B65 /* Mosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F0E61B24EB778D00FB2B65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9F0E61C24EB778D00FB2B65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		E9F0E63924EB780900FB2B65 /* FilterBarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterBarCell.m; sourceTree = "<group>"; };
 		E9F0E66D24EC052B00FB2B65 /* Normal.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Normal.fsh; sourceTree = "<group>"; };
 		E9F0E66F24EC054000FB2B65 /* Normal.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Normal.vsh; sourceTree = "<group>"; };
-		E9F0E67124EC059F00FB2B65 /* ym3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ym3.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,7 @@
 			children = (
 				E9F0E66B24EC02B000FB2B65 /* filter */,
 				E9F0E63424EB77AB00FB2B65 /* Tool */,
-				E9F0E67124EC059F00FB2B65 /* ym3.jpg */,
+				E9BD1D8D24F0B1D800F0D91F /* lufei.jpg */,
 				E9F0E61B24EB778D00FB2B65 /* AppDelegate.h */,
 				E9F0E61C24EB778D00FB2B65 /* AppDelegate.m */,
 				E9F0E61E24EB778D00FB2B65 /* SceneDelegate.h */,
@@ -256,7 +256,7 @@
 				E9BD1C9524EC0B7E00F0D91F /* Gray.fsh in Resources */,
 				E9BD1CAB24EC17C800F0D91F /* TriangularMosaic.vsh in Resources */,
 				E9BD1C9A24EC13E500F0D91F /* Reversal.vsh in Resources */,
-				E9F0E67224EC059F00FB2B65 /* ym3.jpg in Resources */,
+				E9BD1D8E24F0B1D800F0D91F /* lufei.jpg in Resources */,
 				E9BD1CA624EC16C300F0D91F /* HexagonMosaic.vsh in Resources */,
 				E9F0E66E24EC052B00FB2B65 /* Normal.fsh in Resources */,
 				E9BD1CA924EC17A600F0D91F /* TriangularMosaic.fsh in Resources */,

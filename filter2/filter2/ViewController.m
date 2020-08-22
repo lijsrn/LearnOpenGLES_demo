@@ -1,9 +1,9 @@
 //
 //  ViewController.m
-//  001--滤镜处理
+//  filter2
 //
-//  Created by CC老师 on 2019/4/23.
-//  Copyright © 2019年 CC老师. All rights reserved.
+//  Created by JH on 2020/8/19.
+//  Copyright © 2020 JH. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -82,7 +82,7 @@ typedef struct {
     filerBar.delegate = self;
     [self.view addSubview:filerBar];
     
-    NSArray *dataSource = @[@"无",@"灰度",@"颠倒",@"马赛克",@"马赛克2",@"马赛克3"];
+    NSArray *dataSource = @[@"无",@"缩放",@"灵魂出窍",@"抖动",@"闪白",@"毛刺",@"幻觉"];
     filerBar.itemList = dataSource;
 }
 
@@ -102,16 +102,16 @@ typedef struct {
     self.vertices[2] = (SenceVertex){{1, 1, 0}, {1, 1}};
     self.vertices[3] = (SenceVertex){{1, -1, 0}, {1, 0}};
     
-    //4.创建图层(CAEAGLLayer)
-    CAEAGLLayer *layer = [[CAEAGLLayer alloc] init];
     
     //6.获取处理的图片路径
-    NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"lufei.jpg"];
+    NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"ym3.jpg"];
     //读取图片
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
-  
+   
+    //4.创建图层(CAEAGLLayer)
+    CAEAGLLayer *layer = [[CAEAGLLayer alloc] init];
     //设置图层frame
-    layer.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.width *  CGImageGetHeight(image.CGImage)/ CGImageGetWidth(image.CGImage));
+    layer.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.width *  CGImageGetHeight(image.CGImage)/CGImageGetWidth(image.CGImage));
     //设置图层的scale
     layer.contentsScale = [[UIScreen mainScreen] scale];
     //给View添加layer
@@ -295,62 +295,70 @@ typedef struct {
 #pragma mark - FilterBarDelegate
 
 - (void)filterBar:(FilterBar *)filterBar didScrollToIndex:(NSUInteger)index {
-    //1. 选择灰度shader
+    //1. 选择默认shader
     if (index == 0) {
         [self setupNormalShaderProgram];
-    }else if (index == 1) {
-        [self setupGrayShaderProgram];
+    }else if(index == 1)
+    {
+        [self setupScaleShaderProgram];
     }else if(index == 2)
     {
-        [self setupReversalShaderProgram];
-    }else if (index == 3)
+        [self setupSoulOutShaderProgram];
+    }else if(index == 3)
     {
-        [self setupMosaicShaderProgram];
-    }else if (index == 4)
+        [self setupShakeShaderProgram];
+    }else if(index == 4)
     {
-        [self setupHexagonMosaicShaderProgram];
-    }else if (index == 5)
+        [self setupShineWhiteShaderProgram];
+    }else if(index == 5)
     {
-        [self setupTriangularMosaicShaderProgram];
+        [self setupGitchShaderProgram];
+    }else
+    {
+        [self setupVertigoShaderProgram];
     }
     // 重新开始滤镜动画
     [self startFilerAnimation];
 }
 
 #pragma mark - Shader
-//普通图片显示着色器程序
+
+// 默认着色器程序
 - (void)setupNormalShaderProgram {
+    //设置着色器程序
     [self setupShaderProgramWithName:@"Normal"];
 }
 
-// 灰度滤镜着色器程序
-- (void)setupGrayShaderProgram {
-    //设置着色器程序
-    [self setupShaderProgramWithName:@"Gray"];
+// 缩放滤镜着色器程序
+- (void)setupScaleShaderProgram {
+    [self setupShaderProgramWithName:@"Scale"];
 }
 
-// 颠倒滤镜着色器程序
-- (void)setupReversalShaderProgram {
-    //设置着色器程序
-    [self setupShaderProgramWithName:@"Reversal"];
-}
-
-
-
-// 马赛克滤镜着色器程序
-- (void)setupMosaicShaderProgram {
-    [self setupShaderProgramWithName:@"Mosaic"];
+// 灵魂出窍滤镜着色器程序
+- (void)setupSoulOutShaderProgram {
+    [self setupShaderProgramWithName:@"SoulOut"];
     
 }
 
-// 六边形马赛克滤镜着色器程序
-- (void)setupHexagonMosaicShaderProgram {
-    [self setupShaderProgramWithName:@"HexagonMosaic"];
+// 抖动滤镜着色器程序
+-(void)setupShakeShaderProgram {
+    [self setupShaderProgramWithName:@"Shake"];
+
 }
 
-// 三角形马赛克滤镜着色器程序
-- (void)setupTriangularMosaicShaderProgram {
-    [self setupShaderProgramWithName:@"TriangularMosaic"];
+// 闪白滤镜着色器程序
+- (void)setupShineWhiteShaderProgram {
+    [self setupShaderProgramWithName:@"ShineWhite"];
+}
+
+// 毛刺滤镜着色器程序
+- (void)setupGitchShaderProgram {
+    [self setupShaderProgramWithName:@"Glitch"];
+}
+
+// 幻影滤镜着色器程序
+- (void)setupVertigoShaderProgram {
+    [self setupShaderProgramWithName:@"Vertigo"];
 }
 
 // 初始化着色器程序
@@ -463,7 +471,5 @@ typedef struct {
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &backingHeight);
     return backingHeight;
 }
-
-
 
 @end
